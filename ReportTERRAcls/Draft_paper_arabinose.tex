@@ -25,7 +25,7 @@
 % Leave a blank line between paragraphs instead of using \\ if using \\ note that line number will also add 1 line. 
 
 \def\keyFont{\fontsize{8}{11}\helveticabold }
-\def\firstAuthorLast{Sample {et~al.}} %use et al only if is more than 1 author
+\def\firstAuthorLast{Henrion {et~al.}} %use et al only if is more than 1 author
 \def\Authors{Lucas Henrion\,$^{1,*}$, Juan Andreas Martinez\,$^{2}$ and Frank Delvigne\,$^{1,2}$}
 % Affiliations should be keyed to the author's name with superscript numbers and be listed as follows: Laboratory, Department).
 
@@ -63,26 +63,35 @@ This is where an abstract can be written, if no need please ignore this section.
 \newpage %this should be commented if no abstract or small abstract or at will.
 
 \section{Introduction}
+
 \begin{itemize}
 \item Phenotypic diversity is viewed as the main contributor to population heterogeneity during the first 100 hours of cultivation
 \item Chemostat cultivation, witch as all continuous process represents a improvement compare to traditional batch and fed-batch, as been described as a highly competitive environment thus exercising a selection pressure and a stress on the bacterial population
 \item The popular and well studied arabinose operon has been shown to experience of extreme form of phenotypic heterogeneity named bimodality in such cultivation mode
 \item In a previous paper from our team we describe how such heterogeneity could me mitigated by adding arabinose not in a constant feed but as a pulse
-\item
+\item By describing how we can control the population with the segregostat we uncover a key contributor to phenotypic heterogeneity in continuous cultivation
 
 \end{itemize}
 
-\section{Other section}
-\lipsum[5-6]
+\section{Key papers}
 
-\subsection{Heading Levels}
+In this section I describe global ideas from key papers that I want to cite.
 
-%There are 5 heading levels
+\subsection{Global concept 1: single cell analysis as a reseach and control tool}
 
-\subsection{Level 2}
-\subsubsection{Level 3}
-\paragraph{Level 4}
-\subparagraph{Level 5}
+
+
+\subsection{Global concept 2: Phenotypic diversity is a multicomponant process that remains poorly caracterise}
+
+\subsection{Global concept 3: Gene activation is comprised of multiple input that interact as a gene regulation network}
+
+\section{Observation}
+
+Arabinose both serves as an inductor and a carbon source. Single cell induction has a hill shape probability density that depends on the inductor concentration. Induction leads to the consumption of arabinose towards an equilibration point. Because the system has memory, the primary induction overshoot that stable point and leads to a de-induction of the system. Concequantly the arabinose concentration rises again giving bith to a secondary induction. The system then oscillates towards that equilibration point and bimodality.
+
+\section{Model description}
+
+We have built a mechanistic model to explain and simulate the population induction profile. The population is split into 2000 imaginary cells that can each interact with the substrate in a random order. A group can either  only consume glucose and ignore arabinose or if it had invested in the transportors and enzymes, gain the additional capacity to consume arabinose. The choice of each group to co-consume or not depends on the induction of the arabinose operon given a Hill shape density probability. Once a bacterial groupe has decided to commit to arabinose it will only start co-consuming after a delay. This last represents the time needed for the transcription and translation of the operon. Beside, if a bacteria commits to co-consumption it will remain capable of doing so until it devides, even if the arabinose content has fell bellow induction limit.
 
 \subsection{Equations}
 Equations should be inserted in editable format from the equation editor, align can also be used.
@@ -100,9 +109,6 @@ example of align.
 
 
 
-\section{Citation}
-
-For Original Research Articles \citep{conference}, Clinical Trial Articles \citep{article}, and Technology Reports \citep{patent}, the introduction should be succinct, with no subheadings \citep{book}. For Case Reports the Introduction should include symptoms at presentation \citep{chapter}, physical exams and lab results \citep{dataset}.
 
 \section{Track Changes}
 %%%note that by puting [final] as option on document class all track changes and remarks will disapear and final document will be compiled.
